@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mekke'nin Tarihî Önemi — Dinî, Ekonomik ve Siyasî Boyutlarıyla akademik araştırma yazısı." />
+  <title>Mekke’nin Tarihî Önemi — Araştırma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== ÜST NAVBAR ==================== -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Ana menü">
+      <div class="navbar__inner">
+        <a href="#ana-sayfa" class="navbar__brand">
+          <span class="navbar__brand-mark" aria-hidden="true"></span>
+          <span class="navbar__brand-text">Mekke’nin Tarihî Önemi</span>
+        </a>
+
+        <button
+          type="button"
+          class="navbar__toggle"
+          id="navToggle"
+          aria-label="Menüyü aç/kapat"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="#ana-sayfa" data-nav-link>Ana Sayfa</a></li>
+          <li><a href="#dini-onemi" data-nav-link>Dinî Önemi</a></li>
+          <li><a href="#ekonomik-onemi" data-nav-link>Ekonomik Önemi</a></li>
+          <li><a href="#siyasi-onemi" data-nav-link>Siyasî Önemi</a></li>
+          <li><a href="#kaynaklar" data-nav-link>Kaynaklar</a></li>
+          <li><a href="#sonuc" data-nav-link>Sonuç</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO / ANA SAYFA ==================== -->
+    <section class="hero" id="ana-sayfa">
+      <div class="hero__pattern" aria-hidden="true">
+        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" role="presentation">
+          <defs>
+            <pattern id="islamicPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <g fill="none" stroke="currentColor" stroke-width="0.9">
+                <path d="M30 0 L60 30 L30 60 L0 30 Z" />
+                <path d="M30 10 L50 30 L30 50 L10 30 Z" />
+                <circle cx="30" cy="30" r="4" />
+              </g>
+            </pattern>
+          </defs>
+          <rect width="200" height="200" fill="url(#islamicPattern)" />
+        </svg>
+      </div>
+
+      <div class="hero__kaaba" aria-hidden="true">
+        <svg viewBox="0 0 320 240" role="presentation">
+          <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
+            <rect x="120" y="70" width="90" height="110" rx="2" />
+            <line x1="120" y1="100" x2="210" y2="100" />
+            <rect x="150" y="140" width="30" height="40" rx="1" />
+            <line x1="98" y1="180" x2="232" y2="180" />
+            <path d="M120 70 L135 58 L225 58 L210 70" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow">Araştırma Yazısı</p>
+        <h1 class="hero__title">MEKKE’NİN TARİHÎ ÖNEMİ</h1>
+        <p class="hero__subtitle">Dinî, Ekonomik ve Siyasî Boyutlarıyla</p>
+        <p class="hero__lead">
+          Mekke, İslam tarihindeki dinî konumunun yanı sıra ticaret, toplum ve yönetim
+          açısından da önemli bir merkez olmuştur. Bu çalışmada şehrin tarihî önemi;
+          dinî, ekonomik ve siyasî boyutlarıyla kaynaklara dayalı olarak ele alınmaktadır.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== İÇİNDEKİLER ==================== -->
+    <section class="section section--toc" id="icindekiler">
+      <div class="container">
+        <h2 class="section__title">İçindekiler</h2>
+        <ol class="toc">
+          <li><a href="#dini-onemi"><span class="toc__num">01</span><span class="toc__text">Mekke’nin Dinî Önemi</span></a></li>
+          <li><a href="#ekonomik-onemi"><span class="toc__num">02</span><span class="toc__text">Mekke’nin Ekonomik Önemi</span></a></li>
+          <li><a href="#siyasi-onemi"><span class="toc__num">03</span><span class="toc__text">Mekke’nin Siyasî ve Toplumsal Önemi</span></a></li>
+          <li><a href="#kaynaklar"><span class="toc__num">04</span><span class="toc__text">Kaynakların Karşılaştırılması</span></a></li>
+          <li><a href="#ozellikler"><span class="toc__num">05</span><span class="toc__text">Mekke’yi Önemli Bir Şehir Yapan Özellikler</span></a></li>
+          <li><a href="#sonuc"><span class="toc__num">06</span><span class="toc__text">Genel Sonuç</span></a></li>
+          <li><a href="#kaynakca"><span class="toc__num">07</span><span class="toc__text">Kaynakça</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================== 1. DİNÎ ÖNEMİ ==================== -->
+    <section class="section" id="dini-onemi">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 01</p>
+        <h2 class="section__title">Mekke’nin Dinî Önemi</h2>
+
+        <p class="lead">
+          Mekke’nin tarih boyunca kazandığı önemi anlamak için öncelikle şehrin dinî
+          konumunu ele almak gerekir. Mekke, yalnızca bir yerleşim yeri değil; inanç,
+          ziyaret ve ibadet açısından bölgenin merkezinde yer alan bir şehirdir.
+        </p>
+
+        <p>
+          Mekke’nin en önemli özelliği, Kâbe’nin burada bulunmasıdır. Bu özellik, şehrin
+          tarih boyunca hem Araplar hem de Müslümanlar için bir toplanma ve ziyaret
+          merkezi olmasını sağlamıştır. Şehrin dinî kimliği, tarihî süreç içinde diğer
+          bütün özelliklerini etkileyen temel bir unsur olmuştur.
+        </p>
+
+        <article class="article-block">
+          <h3 class="subheading">Kâbe’nin Önemi</h3>
+          <p>
+            Kâbe, Mekke’nin dinî öneminin merkezinde yer alır. Kâbe’nin bu şehirde
+            bulunması, Mekke’yi çok erken dönemlerden itibaren kutsal kabul edilen bir
+            merkez hâline getirmiştir. Kâbe, İslam’dan önce de Araplar için önemli bir
+            ziyaret merkeziydi; bu yönüyle şehir, çevresindeki topluluklar için bir
+            buluşma noktası işlevi görüyordu.
+          </p>
+          <p>
+            İslam’ın gelmesiyle birlikte Mekke’nin dinî önemi daha da artmıştır. Kâbe,
+            Müslümanların kıblesi olmuş ve şehir, İslam dünyasının ortak değerlerinden
+            biri hâline gelmiştir. Böylece Kâbe’nin varlığı, Mekke’nin kimliğini hem
+            tarihî hem de dinî açıdan belirleyen en temel öge olmuştur.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Hac ve Umre</h3>
+          <p>
+            Müslümanlar hac ve umre için Mekke’ye gelir. Bu ziyaretler, yılın belirli
+            dönemlerinde şehre büyük bir insan hareketliliği kazandırır. Farklı
+            bölgelerden gelen ziyaretçiler, Mekke’yi sürekli canlı tutan bir akış
+            oluşturur.
+          </p>
+          <p>
+            Hac ve umre, Mekke’yi İslam dünyasının en önemli merkezlerinden biri
+            hâline getirmiştir. Bu ziyaretler yalnızca dinî bir anlam taşımakla kalmaz;
+            şehrin tarihî ve toplumsal konumunu da güçlendirir. Böylece hac ve umre,
+            Mekke’nin dinî önemini sürekli kılan bir etken olarak öne çıkar.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">İslam Tarihindeki Yeri</h3>
+          <p>
+            Mekke, İslam’ın doğduğu şehirdir. Bu nedenle İslam tarihi açısından merkezî
+            bir konuma sahiptir. Şehrin bu konumu, yalnızca dinî bir değer değil; aynı
+            zamanda tarihî bir gerçeklik olarak da öne çıkar.
+          </p>
+          <p>
+            Mekke’nin dinî önemi, tarih boyunca şehrin ekonomik ve toplumsal yapısıyla
+            iç içe geçmiştir. Kâbe çevresinde oluşan hareketlilik, şehrin bütün
+            boyutlarını etkilemiştir. Bu nedenle Mekke’nin dinî konumunu, diğer
+            özelliklerinden bağımsız düşünmek mümkün değildir.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 2. EKONOMİK ÖNEMİ ==================== -->
+    <section class="section section--alt" id="ekonomik-onemi">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 02</p>
+        <h2 class="section__title">Mekke’nin Ekonomik Önemi</h2>
+
+        <p class="lead">
+          Mekke’nin ekonomik önemi, büyük ölçüde şehrin coğrafi konumu ve sahip olduğu
+          dinî merkez kimliğiyle ilişkilidir. Şehir, ticaret yolları üzerindeki konumu
+          sayesinde bölgesel bir ekonomik merkez hâline gelmiştir.
+        </p>
+
+        <p>
+          Mekke’nin çevresi tarım için elverişli değildi. Bu nedenle ticaret, şehirde
+          önemli bir geçim kaynağı olarak öne çıkmıştır. Tarıma elverişli olmayan bir
+          bölgede kurulmuş olması, Mekke’nin ekonomik yapısını doğrudan etkilemiş ve
+          şehri ticarete yönlendirmiştir.
+        </p>
+
+        <article class="article-block">
+          <h3 class="subheading">Ticaret</h3>
+          <p>
+            Mekke’nin ekonomik hayatında ticaret belirleyici bir yere sahiptir. Şehrin
+            çevresinin tarım için elverişli olmaması, halkı ticaret yapmaya yöneltmiştir.
+            Bu durum, Mekke’de ticaretin zamanla güçlü bir gelenek hâline gelmesini
+            sağlamıştır.
+          </p>
+          <p>
+            Ticaret, yalnızca bir geçim kaynağı değil; aynı zamanda şehrin çevresiyle
+            kurduğu ilişkilerin temelini oluşturmuştur. Mekke, bu yönüyle bölgesel bir
+            alışveriş ve buluşma merkezi olarak öne çıkmıştır.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Kervan Ticaretleri</h3>
+          <p>
+            Kureyş ticaret kervanları düzenliyordu. Kışın Yemen’e, yazın Şam bölgesine
+            seferler yapılıyordu. Bu düzenli seferler, Mekke’nin bölgesel ticaret
+            ağlarıyla bütünleşmesini sağlıyordu.
+          </p>
+          <p>
+            Kervan ticaretleri, şehrin ekonomik ilişkilerini genişletmiştir. Farklı
+            bölgelere yapılan seferler, Mekke’yi güney ve kuzey arasında bir bağlantı
+            noktası hâline getirmiştir. Böylece kervanlar, şehrin ekonomik önemini
+            artıran en önemli unsurlardan biri olmuştur.
+          </p>
+
+          <figure class="figure figure--wide">
+            <div class="figure__graphic" aria-hidden="true">
+              <svg viewBox="0 0 620 190" role="presentation">
+                <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                  <!-- Kuzey-güney ticaret güzergâhı -->
+                  <line x1="90" y1="95" x2="530" y2="95" stroke-dasharray="5 6" />
+                  <circle cx="90" cy="95" r="5" />
+                  <circle cx="530" cy="95" r="5" />
+                  <circle cx="310" cy="95" r="7" />
+                  <!-- Kervan işaretleri -->
+                  <path d="M200 95 l6 -8 l6 8 z" />
+                  <path d="M410 95 l6 -8 l6 8 z" />
+                </g>
+                <g fill="currentColor" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">
+                  <text x="90" y="126">Yemen</text>
+                  <text x="310" y="126">Mekke</text>
+                  <text x="530" y="126">Şam</text>
+                </g>
+              </svg>
+            </div>
+            <figcaption class="figure__caption">
+              Kureyş kervanlarının kışın Yemen’e, yazın Şam bölgesine uzanan ticaret
+              güzergâhını gösteren sade şema.
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Hac ve Ekonomik Hareketlilik</h3>
+          <p>
+            Hac dönemlerinde farklı kabilelerden insanlar Mekke’ye geliyordu. Bu durum
+            alışverişi artırıyordu. Şehre yönelen ziyaretçi akışı, ekonomik hayatı canlı
+            tutan önemli bir etken olmuştur.
+          </p>
+          <p>
+            Hac ve ziyaretler, Mekke’nin ekonomik hareketliliğini beslemiştir. Şehre
+            gelen insanların ihtiyaçları, alışverişi ve ticari ilişkileri
+            yoğunlaştırmıştır. Böylece dinî merkez olma özelliği, şehrin ekonomik
+            yapısını da doğrudan etkilemiştir.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Panayırlar</h3>
+          <p>
+            Panayırlar ekonomik hayatın gelişmesine ve farklı toplulukların bir araya
+            gelmesine katkı sağladı. Bu etkinlikler, ticaretin yanı sıra toplumsal
+            ilişkilerin de güçlenmesine imkân tanıyordu.
+          </p>
+          <p>
+            Farklı bölgelerden gelen toplulukların bir araya geldiği panayırlar,
+            Mekke’nin bölgesel bir buluşma merkezi olma özelliğini pekiştirmiştir.
+            Ticaret ve sosyal ilişkiler bu etkinliklerde iç içe geçmiştir.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 3. SİYASÎ VE TOPLUMSAL ÖNEMİ ==================== -->
+    <section class="section" id="siyasi-onemi">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 03</p>
+        <h2 class="section__title">Mekke’nin Siyasî ve Toplumsal Önemi</h2>
+
+        <p class="lead">
+          Mekke’nin önemi yalnızca dinî ve ekonomik boyutlarla sınırlı değildir. Şehir,
+          sahip olduğu yönetim yapısı ve toplumsal düzeniyle de bölgenin merkezinde yer
+          almıştır.
+        </p>
+
+        <article class="article-block">
+          <h3 class="subheading">Kureyş’in Yönetimi</h3>
+          <p>
+            Kureyş kabilesi zamanla Mekke’nin yönetiminde güçlü hâle geldi. Kâbe ile
+            ilgili görevler ve şehrin yönetimi Kureyş’in elindeydi. Bu durum, şehrin
+            siyasî yapısının Kureyş çevresinde şekillenmesini sağlamıştır.
+          </p>
+          <p>
+            Kureyş’in şehirdeki konumu, hem dinî hem de siyasî bir nitelik taşıyordu.
+            Kâbe ile ilgili görevlerin yönetimi, kabileye ayrı bir saygınlık
+            kazandırıyordu. Böylece Kureyş, Mekke’nin siyasî hayatında belirleyici bir
+            aktör hâline gelmiştir.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Dârünnedve</h3>
+          <p>
+            Önemli konuların görüşüldüğü Dârünnedve, Mekke’nin siyasî hayatında önemli
+            bir yere sahipti. Bu yapı, şehrin toplumsal ve siyasî düzeninin
+            oluşmasında etkiliydi. Kararların görüşülüp değerlendirildiği bir meclis
+            işlevi görmesi, şehirde ortak bir yönetim anlayışının gelişmesine katkı
+            sağlamıştır.
+          </p>
+          <p>
+            Dârünnedve, Mekke toplumunda önemli meselelerin bir arada ele alındığı bir
+            merkez olarak öne çıkıyordu. Bu yönüyle şehrin siyasî düzeni, yalnızca tek
+            bir kişinin değil, ortak görüşmenin etkisiyle şekilleniyordu.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Toplumsal Yapı</h3>
+          <p>
+            Mekke, farklı kabilelerden insanların bir araya geldiği bir şehirdi. Kâbe
+            çevresinde oluşan hareketlilik, şehirde çok yönlü bir toplumsal yapının
+            gelişmesine ortam hazırlıyordu.
+          </p>
+          <p>
+            Şehirdeki ticari canlılık ve ziyaret akışı, farklı toplulukların bir arada
+            bulunmasını sağlıyordu. Bu durum, Mekke’nin yalnızca dinî değil, toplumsal
+            açıdan da bir buluşma merkezi olmasına katkı sunuyordu.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">Güvenlik ve Kabileler Arası İlişkiler</h3>
+          <p>
+            Mekke’nin kutsal kabul edilen bir merkez olması, şehirde görece bir güven
+            ortamı sağlıyordu. Bu güven ortamı, ticari ve toplumsal ilişkilerin
+            sürdürülebilmesi açısından önemliydi.
+          </p>
+          <p>
+            Kabileler arası ilişkiler, şehrin siyasî ve toplumsal düzenini doğrudan
+            etkiliyordu. Mekke’nin bir buluşma ve ziyaret merkezi olması, farklı
+            kabilelerin burada bir araya gelmesini kolaylaştırıyordu. Böylece güvenlik,
+            hem ticaretin hem de toplumsal hayatın temelini oluşturuyordu.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 4. KAYNAKLARIN KARŞILAŞTIRILMASI ==================== -->
+    <section class="section section--alt" id="kaynaklar">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 04</p>
+        <h2 class="section__title">Kaynakların Karşılaştırılması</h2>
+
+        <p class="lead">
+          Mekke’nin tarihî önemi farklı kaynaklarda farklı yönleriyle ele alınmıştır.
+          Bu bölümde, başvurulan kaynakların hangi konulara ağırlık verdiği
+          incelenmektedir.
+        </p>
+
+        <article class="article-block">
+          <h3 class="subheading">Kur’an-ı Kerim</h3>
+          <p>
+            Kur’an-ı Kerim, Mekke ile ilgili olarak şehrin dinî konumuna ve kutsal
+            merkez oluşuna dair bilgiler sunar. Bu yönüyle Kur’an, Mekke’nin dinî
+            öneminin anlaşılmasında temel bir kaynak olma özelliği taşır.
+          </p>
+          <p>
+            Özellikle Kureyş Suresi, kış ve yaz ticaret yolculuklarına dikkat çekmesi
+            bakımından şehrin ekonomik yönüne de ışık tutar. Bu nedenle Kur’an,
+            Mekke’nin hem dinî hem ekonomik boyutunu birlikte değerlendirebilmek için
+            önemli bir referanstır.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">TDV İslâm Ansiklopedisi</h3>
+          <p>
+            TDV İslâm Ansiklopedisi, Kâbe, hac ve Mekke’nin dinî merkezi olması
+            üzerinde duruyor. Ansiklopedi, şehrin tarihî ve dinî yönlerini ayrıntılı
+            biçimde ele alması bakımından başvurulan temel kaynaklardan biridir.
+          </p>
+          <p>
+            “Mekke”, “Kureyş” ve “Kâbe” maddeleri, şehrin dinî, ekonomik ve siyasî
+            yapısını bir arada değerlendirmeye imkân tanır. Bu yönüyle ansiklopedi,
+            araştırmanın bütüncül bir çerçevede ilerlemesine katkı sağlar.
+          </p>
+        </article>
+
+        <article class="article-block">
+          <h3 class="subheading">İslam Ansiklopedisi ve Akademik Kaynaklar</h3>
+          <p>
+            Kureyş kaynakları; ticaret kervanlarını, güvenliği ve ekonomik ilişkileri
+            öne çıkarıyor. Mekke’nin İslam öncesi dinî ve ticari yapısını inceleyen
+            akademik çalışmalar ise şehrin tarihî süreç içindeki konumuna dair ek
+            değerlendirmeler sunar.
+          </p>
+          <p>
+            Diyanet tefsiri, kış ve yaz ticaret yolculuklarına dikkat çekiyor. Bu
+            kaynaklar birlikte değerlendirildiğinde, Mekke’nin çok yönlü yapısını
+            farklı açılardan görmek mümkün olmaktadır.
+          </p>
+        </article>
+
+        <article class="article-block article-block--conclusion">
+          <h3 class="subheading">Karşılaştırmadan Çıkan Sonuç</h3>
+          <p>
+            Kaynakların karşılaştırılması, Mekke’nin öneminin tek bir nedene bağlı
+            olmadığını göstermektedir. Dinî önem, hac, ticaret ve güvenlik birbirini
+            desteklemiştir. Kur’an-ı Kerim ve Diyanet tefsiri şehrin dinî boyutunu ve
+            ticaret yolculuklarını öne çıkarırken, TDV İslâm Ansiklopedisi tarihî ve
+            dinî yönleri ayrıntılı biçimde ele almaktadır.
+          </p>
+          <p>
+            Kureyş kaynakları ve akademik çalışmalar ise ticaret, güvenlik ve ekonomik
+            ilişkileri vurgulamaktadır. Bütün bu kaynaklar, Mekke’nin dinî merkez olma
+            özelliğiyle ekonomik ve siyasî konumu arasında güçlü bir bağ olduğunu
+            göstermektedir. Kaynakların ele aldığı konular birbirinden bağımsız
+            değildir; aksine birbirini tamamlayan bir bütün oluşturur.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 5. ÖNE ÇIKAN ÖZELLİKLER ==================== -->
+    <section class="section" id="ozellikler">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 05</p>
+        <h2 class="section__title">Mekke’yi Önemli Bir Şehir Yapan Özellikler</h2>
+
+        <p class="lead">
+          Mekke’yi tarih boyunca öne çıkaran özellikler, birbirini destekleyen birkaç
+          temel başlıkta toplanabilir.
+        </p>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 class="feature-card__title">Dinî Merkez</h3>
+            <p class="feature-card__text">Kâbe’nin bulunması.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Hac ve Ziyaretler</h3>
+            <p class="feature-card__text">Şehre sürekli insan hareketi.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Ticaret</h3>
+            <p class="feature-card__text">Kervanlar ve bölgesel ilişkiler.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Güvenlik</h3>
+            <p class="feature-card__text">Kutsal alanın sağladığı güven ortamı.</p>
+          </article>
+          <article class="feature-card">
+            <h3 class="feature-card__title">Panayırlar</h3>
+            <p class="feature-card__text">Ticaret ve sosyal ilişkiler.</p>
+          </article>
+        </div>
+
+        <p>
+          Bu özellikler bir arada değerlendirildiğinde, Mekke’nin öneminin tek bir
+          nedene bağlı olmadığı görülür. Dinî, ekonomik, siyasî ve toplumsal unsurlar
+          birbirini desteklemiş; şehrin tarih boyunca merkezî konumunu sürdürmesini
+          sağlamıştır.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 6. GENEL SONUÇ ==================== -->
+    <section class="section section--alt" id="sonuc">
+      <div class="container">
+        <p class="section__eyebrow">Bölüm 06</p>
+        <h2 class="section__title">Genel Sonuç</h2>
+
+        <p>
+          Mekke’nin tarihî öneminde en temel unsur Kâbe’dir. Kâbe sayesinde Mekke dinî
+          bir merkez hâline gelmiştir. Bu dinî merkez olma özelliği, şehrin bütün
+          tarihî sürecini etkilemiş; Mekke’yi çevresindeki topluluklar için bir
+          buluşma ve ziyaret noktası yapmıştır. Hac ve umre gibi ziyaretler ise şehre
+          sürekli bir insan hareketliliği kazandırmıştır.
+        </p>
+        <p>
+          Mekke’nin ekonomik önemi, dinî konumuyla iç içe gelişmiştir. Şehrin çevresi
+          tarım için elverişli olmadığından ticaret öne çıkmış; Kureyş ticaret
+          kervanları kışın Yemen’e, yazın Şam bölgesine seferler düzenlemiştir. Hac
+          dönemlerinde farklı kabilelerden insanların şehre gelmesi alışverişi
+          artırmış, panayırlar ise hem ticaretin hem de topluluklar arası ilişkilerin
+          gelişmesine katkı sağlamıştır.
+        </p>
+        <p>
+          Siyasî ve toplumsal açıdan Mekke, Kureyş’in yönetiminde şekillenmiştir. Kâbe
+          ile ilgili görevler ve şehrin yönetimi Kureyş’in elindeydi. Önemli konuların
+          görüşüldüğü Dârünnedve, şehrin siyasî hayatında önemli bir yere sahipti.
+          Kutsal alanın sağladığı güven ortamı ve kabileler arası ilişkiler, şehrin
+          toplumsal düzenini destekliyordu. Bütün bu unsurlar bir araya geldiğinde
+          Mekke; dinî, ekonomik ve siyasî açıdan önemli bir şehir olarak öne çıkmıştır.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 7. KAYNAKÇA ==================== -->
+    <section class="section" id="kaynakca">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">Bölüm 07</p>
+        <h2 class="section__title">Kaynakça</h2>
+
+        <ul class="bibliography">
+          <li>Kur’an-ı Kerim — Kureyş Suresi.</li>
+          <li>TDV İslâm Ansiklopedisi — “Mekke” maddesi.</li>
+          <li>TDV İslâm Ansiklopedisi — “Kureyş” maddesi.</li>
+          <li>TDV İslâm Ansiklopedisi — “Kâbe” maddesi.</li>
+          <li>Diyanet İşleri Başkanlığı — Kureyş Suresi Tefsiri.</li>
+          <li>Mekke’nin İslam öncesi dinî ve ticari yapısını inceleyen akademik çalışmalar.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container container--narrow">
+      <p class="site-footer__title">Mekke’nin Tarihî Önemi</p>
+      <p class="site-footer__text">Dinî, Ekonomik ve Siyasî Boyutlarıyla — Araştırma Çalışması</p>
+      <a href="#ana-sayfa" class="site-footer__top">↑ Sayfa başına dön</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

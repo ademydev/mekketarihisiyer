@@ -1,0 +1,630 @@
+/* ============================================================
+   MEKKE'NİN TARİHÎ ÖNEMİ — Araştırma Sitesi Stili
+   Uzun-form akademik makale düzeni (slayt sistemi yoktur)
+   ============================================================ */
+
+/* ---------- DEĞİŞKENLER ---------- */
+:root {
+  --bg: #f7f3ea;          /* krem / kırık beyaz zemin */
+  --bg-alt: #f1ebde;      /* hafif koyu bölüm zemini */
+  --surface: #fffdf8;     /* kart / kutu zemini */
+  --brown: #4a3220;       /* koyu kahverengi */
+  --brown-deep: #2f2014;  /* çok koyu kahverengi */
+  --bordo: #6b2430;       /* bordo */
+  --gold: #b0812e;        /* altın vurgu */
+  --gold-soft: #d6bd85;   /* açık altın */
+  --text: #2c2016;        /* ana metin */
+  --text-muted: #5f5142;  /* ikincil metin */
+  --line: #e2d8c6;        /* ince çizgi / kenarlık */
+
+  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --content-width: 820px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 20px rgba(47, 32, 20, 0.06);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- TEMEL ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px; /* sticky navbar yüksekliği */
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--brown-deep);
+  margin: 0;
+}
+
+p { margin: 0 0 1.35em; }
+
+a { color: var(--bordo); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+ul, ol { margin: 0; padding: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 243, 234, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brown-deep);
+  white-space: nowrap;
+}
+
+.navbar__brand:hover { text-decoration: none; }
+
+.navbar__brand-mark {
+  width: 12px;
+  height: 12px;
+  background: var(--bordo);
+  transform: rotate(45deg);
+  border-radius: 2px;
+  box-shadow: 0 0 0 3px rgba(176, 129, 46, 0.22);
+  flex: none;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar__menu a {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 4px 0;
+  transition: color 0.25s var(--ease);
+}
+
+.navbar__menu a:hover { color: var(--bordo); text-decoration: none; }
+
+.navbar__menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.navbar__menu a.is-active {
+  color: var(--bordo);
+  font-weight: 600;
+}
+
+.navbar__menu a.is-active::after { transform: scaleX(1); }
+
+/* Hamburger butonu */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0 9px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.navbar__toggle-bar {
+  display: block;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(2) { opacity: 0; }
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   GENEL DÜZEN
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.container--narrow { max-width: 760px; }
+
+.section {
+  min-height: auto; /* slayt zorlaması yok */
+  padding: 92px 0;
+}
+
+.section--alt { background: var(--bg-alt); }
+
+.section--toc { padding: 72px 0 64px; }
+
+.section__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+  margin-bottom: 34px;
+  position: relative;
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 3px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--gold), var(--bordo));
+  border-radius: 2px;
+}
+
+.section p { color: var(--text); }
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Alt başlık (makale içi) */
+.article-block { margin-bottom: 40px; }
+
+.article-block:last-child { margin-bottom: 0; }
+
+.subheading {
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  margin-bottom: 16px;
+  color: var(--bordo);
+}
+
+.article-block p { color: var(--text); }
+
+/* Sonuç bloğu vurgusu (kaynak karşılaştırması içinde) */
+.article-block--conclusion {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  box-shadow: var(--shadow);
+}
+
+/* ============================================================
+   HERO / ANA SAYFA
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: auto;
+  padding: 110px 0 96px;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(176, 129, 46, 0.10), transparent 62%),
+    linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+  color: var(--brown);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.hero__pattern svg { width: 100%; height: 100%; }
+
+.hero__kaaba {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -62%);
+  width: min(360px, 58vw);
+  color: var(--brown);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.hero__kaaba svg { width: 100%; height: auto; }
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bordo);
+  margin-bottom: 22px;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--brown-deep);
+  margin-bottom: 18px;
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  color: var(--bordo);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.hero__lead {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   İÇİNDEKİLER
+   ============================================================ */
+.toc {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.toc li { border-bottom: 1px solid var(--line); }
+
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 8px;
+  color: var(--text);
+  transition: background 0.25s var(--ease), padding-left 0.25s var(--ease);
+}
+
+.toc a:hover {
+  text-decoration: none;
+  background: rgba(176, 129, 46, 0.06);
+  padding-left: 18px;
+}
+
+.toc__num {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  flex: none;
+  width: 34px;
+}
+
+.toc__text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--brown-deep);
+}
+
+/* ============================================================
+   GÖRSEL / FIGÜR
+   ============================================================ */
+.figure {
+  margin: 34px 0;
+  padding: 0;
+}
+
+.figure__graphic {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 26px 18px;
+  color: var(--brown);
+  box-shadow: var(--shadow);
+}
+
+.figure__graphic svg { width: 100%; height: auto; display: block; }
+
+.figure__caption {
+  margin-top: 12px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================================
+   ÖZELLİK KARTLARI
+   ============================================================ */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin: 8px 0 34px;
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-soft);
+  box-shadow: 0 8px 26px rgba(47, 32, 20, 0.10);
+}
+
+.feature-card__title {
+  font-size: 1.15rem;
+  color: var(--bordo);
+  margin-bottom: 8px;
+}
+
+.feature-card__text {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   KAYNAKÇA
+   ============================================================ */
+.bibliography {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.bibliography li {
+  position: relative;
+  padding: 14px 18px 14px 38px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.bibliography li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--brown-deep);
+  color: var(--bg);
+  padding: 56px 0 48px;
+  text-align: center;
+}
+
+.site-footer__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #f3ead9;
+  margin-bottom: 8px;
+}
+
+.site-footer__text {
+  font-size: 0.9rem;
+  color: rgba(243, 234, 217, 0.7);
+  margin-bottom: 22px;
+}
+
+.site-footer__top {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-soft);
+  border: 1px solid rgba(214, 189, 133, 0.4);
+  border-radius: 999px;
+  padding: 9px 22px;
+  transition: background 0.28s var(--ease), color 0.28s var(--ease);
+}
+
+.site-footer__top:hover {
+  background: var(--gold-soft);
+  color: var(--brown-deep);
+  text-decoration: none;
+}
+
+/* ============================================================
+   ANİMASYON (minimal fade-in)
+   ============================================================ */
+/* Yalnızca JS çalışırken uygulanır (has-reveal sınıfı eklenince).
+   Böylece JS devre dışıysa içerik her zaman görünür kalır. */
+.has-reveal .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.has-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .navbar__menu { gap: 20px; }
+  .navbar__menu a { font-size: 0.85rem; }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+
+  .navbar__inner { padding: 12px 20px; }
+
+  .navbar__brand-text { font-size: 0.98rem; }
+
+  /* Hamburger menü */
+  .navbar__toggle { display: flex; }
+
+  .navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 10px 24px rgba(47, 32, 20, 0.10);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s var(--ease);
+  }
+
+  .navbar__menu.is-open { max-height: 340px; }
+
+  .navbar__menu li { border-top: 1px solid var(--line); }
+
+  .navbar__menu a {
+    display: block;
+    padding: 14px 22px;
+    font-size: 0.95rem;
+  }
+
+  .navbar__menu a::after { display: none; }
+
+  .section { padding: 64px 0; }
+  .section--toc { padding: 52px 0 44px; }
+
+  .container { padding: 0 20px; }
+
+  .hero { padding: 84px 0 72px; }
+
+  .toc a { gap: 14px; padding: 15px 4px; }
+  .toc__text { font-size: 1.05rem; }
+
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+
+  .article-block--conclusion { padding: 24px 22px; }
+  .figure__graphic { padding: 18px 16px 12px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16.5px; }
+
+  .feature-grid { grid-template-columns: 1fr; }
+
+  .hero__kaaba { opacity: 0.08; }
+
+  .container { padding: 0 16px; }
+  .navbar__inner { padding: 11px 16px; }
+
+  .navbar__brand-mark { display: none; }
+}
+
+/* ============================================================
+   ERİŞİLEBİLİRLİK — Hareket hassasiyeti
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+}
